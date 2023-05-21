@@ -1,6 +1,7 @@
 import argparse
 import os
 from pathlib import Path
+from typing import Union
 
 import numpy as np
 import tensorflow as tf
@@ -36,12 +37,13 @@ def main() -> None:
     dataset_path = Path(args.dataset)
     model_path = Path(args.model)
 
-
     dataset = load_dataset(
         train_csv_path = dataset_path / 'train.csv.gz',
         test_csv_path = dataset_path / 'test.csv.gz'
     )
-    model = tf.keras.models.load_model(model_path)
+    model: Union[None, tf.keras.Model] = tf.keras.models.load_model(model_path)
+    if model is None:
+        raise ValueError(f"Failed to load model from file {model_path}")
 
     # Basic metrics
     print('Checking basic metrics')
