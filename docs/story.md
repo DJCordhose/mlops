@@ -1,5 +1,8 @@
 # Story
 
+## Vorbereitung
+TODO
+
 ## Intro
 1. Problemstellung: innovative Kfz-Versicherungsgesellschaft
 1. Ausgangspunkt mit Colab: notebooks/exploration.ipynb
@@ -34,9 +37,6 @@
 
 ## Produktion
 1. Was ist Kubernetes?
-1. TODO: die Installation wird bei 24 Leuten wahrscheinlich sehr langsam laufen
-   - nur einer im Team macht es?
-   - am Anfang vor 10 schon so viele Rechner flott machen wie möglich
 1. Cluster und Services wie in README.md beschrieben
    - Nach erzeugen des Clusters einmal in docker desktop oder so ansehen
    - Das kann alles bisschen dauern, insbesondere wenn wir uns das Netz mit allen teilen
