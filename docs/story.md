@@ -1,7 +1,9 @@
 # Story
 
 ## Vorbereitung
-TODO
+* Im Projekt-Verzeichnis unter `insurance-prediction`:
+   * `docker build -t insurance_prediction_interactive -f interactive.Dockerfile .`
+   * `docker build -t insurance-prediction .`
 
 ## Intro
 1. Problemstellung: innovative Kfz-Versicherungsgesellschaft
@@ -12,6 +14,8 @@ TODO
 1. MLOps Grundlagen / Überblick über die Phasen, wieso kann ich damit nicht in Prod gehen
 
 ## Professionalisierung
+
+auch: `insurance-prediction/TASKS.md`
 
 1. Intro Docker
 1. Notebook in Libs und Scripte
@@ -39,8 +43,6 @@ TODO
 1. Was ist Kubernetes?
 1. Cluster und Services wie in README.md beschrieben
    - Nach erzeugen des Clusters einmal in docker desktop oder so ansehen
-   - Das kann alles bisschen dauern, insbesondere wenn wir uns das Netz mit allen teilen
-
 1. Beendigung der Tekton Pipelines in http://tekton.localhost/#/pipelineruns abwarten
    - Selbst mit bestem Netz dauert das auf meinem Rechner 15 Minuten
    - Durchgehen, was da eigentlich alles passiert
@@ -58,6 +60,25 @@ TODO
    1. Die müsste fehlschlagen nach ca. der hälfte der Zeit, weil schon das validieren fehlschlagen müsste
    1. Dann Kapazität zurück drehen
    1. Das bauen des neuen Images wird erneut getriggert, das Ergebnis müssen wir aber nicht mehr abwarten
+
+## Produktion wie von Tobi beschrieben: KinD Cluster mit CI/CD aufsetzen
+1. Die README.md beschreibt was zu tun ist und welche Befehle ausgeführt werden müssen.
+1. Wenn das erste init und apply erfolgreich durchgelaufen ist der sanity check:
+   1. http://gitea.local/explore/repos / http://localhost:30030/explore/repos
+   1. http://tekton.localhost/#/pipelineruns - http://localhost:30097/#/pipelineruns
+1. Zurück zur README.md - Die zweite stage ausführen.
+   1. In Tekton sollten nun 2 Pipelines angestoßen worden sein. Eine davon stößt direkt nach Durchlauf
+        eine dritte an.
+   1. In Gitea können wir nun die Repositories checken.
+   1. Ist der Build komplett durchgelaufen, können wir jetzt auch die Anwendung checken.
+        http://insurance-prediction.localhost / http://localhost:30080
+1. Den build failen lassen, indem wir das Modell verschlechtern, so dass die Tests nicht mehr durchlaufen.
+   1. Login: ok-user / Password1234!
+   1. Insurance Prediction Repository öffnen (Das heißt aktuell ok-gitea-repository)
+        http://gitea.local/ok-user/ok-gitea-repository/src/branch/main/src/insurance_prediction/train/train.py
+   1. Hier die Kapazität herunter schrauben
+   1. Auf Tekton läuft die Pipeline, die durch den push getriggert wird:
+        http://tekton.localhost/#/namespaces/cicd/pipelineruns
 
 
 ## Monitoring

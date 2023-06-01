@@ -79,6 +79,18 @@ Folien: https://bit.ly/oop-2023-mlops
     </textarea>
 			</section>
 
+  <section data-markdown class="todo">
+    <textarea data-template>
+- Alles nochmal durchspielen, 
+  - was kann man realistisch auch ohne Netz zeigen?
+  - funktioniert überhaupt noch alles?      
+- Zeit-Plan für die 90 Minuten aufstellen
+- Folien kürzen
+  - Bei Drift haben wir zu viel
+- Nochmal überlegen: könnten die Übungen was anderes sein als nur Labern?      
+    </textarea>
+  </section>
+  
 <section data-markdown>
 	<textarea data-template>
 		### Wer ist Olli
@@ -101,17 +113,43 @@ Blue Collar ML Architect
 </section>
 
 <section data-markdown>
+  <textarea data-template>
+  ### Material zusammen erarbeitet mit
+  
+  <div class="container">
+  <div class="col">
+  <img src="img/yannick.jpg">
+  <p>
+    <a target="_blank" href="mailto:yannick.habecker@openknowledge.de">Yannick Habecker</a>:
+    Dev@OpenKnowledge
+    </p>    
+  </div>
+  <div class="col">
+  <img src="img/tobias_kurzydym.png">
+  <p>
+    <a target="_blank" href="mailto:tobias.kurzydym@openknowledge.de">Tobias Kurzydym</a>:
+    Dev@OpenKnowledge
+    </p>    
+      
+  </div>
+  </div>
+  
+  </textarea>
+</section>
+  
+
+<section data-markdown>
 	<textarea data-template>
-## 2er Teams bilden
+## Stellt euch euren Nachbarn vor
 
-_Tut euch mit euren Nachbaren zusammen_
-
-* Pro Team brauchen wir eine funktionierende Installation 
-* Auch 3er Teams sind möglich, lasst niemanden allein
+### Wir diskutieren später mehr
 
 Fragen:
 * Was macht ihr?
-* Was wisst ihr schon?
+* Was wisst ihr schon im Bereich DevOps oder MLOps (nichts ist absolute ok) 
+* Was wollt ihr wissen?
+
+_5 Minuten_
 </textarea>
 </section>
 
@@ -217,7 +255,9 @@ Die Ground Truth (GT) kommt verzögert und kann sich über die Zeit noch veränd
 
 <section data-markdown style="font-size: xx-large;" class="hands-on">
   <textarea data-template>
-## Hands-On - Unser Ausgangspunkt
+## Unser Ausgangspunkt
+
+Notebooks sind das Werkzeug von Phase I: https://colab.research.google.com/github/djcordhose/mlops/blob/main/insurance-prediction/notebooks/train.ipynb
 
 * Neuronales Netzwerk mit TensorFlow
 * 3 Hidden Layers, 100 Neuronen pro Layer
@@ -228,7 +268,6 @@ Die Ground Truth (GT) kommt verzögert und kann sich über die Zeit noch veränd
 * Normalisierung auf Trainingsdatensätzen
 * Accuracy Training/Test > 85%
 
-Notebook auf Colab: https://colab.research.google.com/github/openknowledge/mlops-m3/blob/main/insurance-prediction/notebooks/train.ipynb
 
 </textarea>
 </section>  
@@ -351,100 +390,6 @@ funktionsfähiges Modell entwickelt.
 </section>
 
 <section data-markdown class="fragments">
-  <textarea data-template>
-
-### Mit Notebooks in Produktion?
-* Von Phase I zu Phase III abkürzen?
-* À la Voilá?
-* Performance, Security, Wartbarkeit, Versionierbarkeit, ...?
-  </textarea>
-</section>
-
-<section data-markdown class="fragments">
-  <textarea data-template>
-### Mit Notebooks in Produktion? - Beispiel Voilá
-
-```
-pip install voila
-voila notebook.ipynb
-```
-
-<img src="img/professionalization/voila_execution.svg" class="fragment">
-</textarea>
-
-* Was geht nicht in Produktion
-  * Training
-  * Validierungen
-  * Analytics
-  * Visualisierung
-</textarea>
-	</section>
-
-<section data-markdown class="fragments">
-  <textarea data-template>
-### Mit Notebooks in Produktion? - Was geht damit?
-
- * Einfache Auswertungen interaktiv bereitstellen
- * Begrenzter Benutzerkreis
- * Ausschließlich Domänenbenutzer als Zielgruppe
-
-</textarea>
-</section>
-
-
-<section data-markdown class="fragments">
-  <textarea data-template>
-### Mit Notebooks in Produktion? - Realität
-
-<img src="img/professionalization/production_reality.svg" class="fragment">
-
-</textarea>
-
-</section>
-
-<section data-markdown class="fragments">
-  <textarea data-template>
-### Mit Notebooks in Produktion? - Was geht damit <u>nicht</u>?
-
-
- * Notebook as it is in Produktion
- * Stateless, Stateful
- * Keine API (REST, gRPC, Kafka, RabbitMQ, ...) für Anbindung externer Systeme
- * Keine API-Definitionen (OpenAPI, Protobuf, ...)
- * Hochverfügbarkeit, Performance, Skalierbarkeit
- * Reproduzierbarkeit der Ergebnisse
- * Wie bemerke ich, wenn sich die Daten verändern?
- * UI/UX nicht sicherstellbar
- * Developer-Experience
-
-</textarea>
-
-</section>
-
-<section data-markdown class="fragments">
-  <textarea data-template>
-### Mit Notebooks in Produktion? - Architektur?
-
-<img src="img/professionalization/notebook_architecture.png" class="fragment" style="height: 600px;">
-
-</textarea>
-
-</section>
-
-
-<section data-markdown class="fragments">
-  <textarea data-template>
-### Mit Notebooks in Produktion? - Fazit
-
- * Notebooks as it is sollten nicht in Produktion
- * Anbindung externer Systeme in den meisten Anwendungsfällen nötig
- * Geringe Kompatibilität zu ML-Ops
- * ...
-</textarea>
-
-</section>
-
-<section data-markdown class="fragments">
 <textarea data-template>
 ### Erfahrungen aus der Software-Entwicklung
 
@@ -502,76 +447,6 @@ https://www.docker.com/resources/what-container/
 </textarea>
 </section>
 
-
-<section data-markdown class="hands-on">
-	<textarea data-template>
-## Hands-On
-
-*Alle Hands-On-Tasks für diesen Teil findet ihr auch im Repository: <br>`insurance-prediction/TASKS.md`*
-  </textarea>
-</section>
-<section data-markdown class="hands-on">
-	<textarea data-template>
-## Hands-On 1 - Docker Installation überprüfen oder herstellen
-
-Helft bitte euren Nachbarn, falls eure Installation schon läuft
-
-1. Wir empfehlen: arbeitet zusammen mit euren direkten Nachbarn
-1. Stellt sicher, dass zumindest einer eurer Rechner eine lauffähige Installation hat 
-1. Sagt kurz Hallo
-1. Installieren (falls noch nicht passiert)
-   * Docker: https://docs.docker.com/get-docker/
-1. Beispiel-Image ausführen
-    * `docker run -it -p 8088:80 --name welcome-to-docker docker/welcome-to-docker`
-1. Nachdem Docker den Container gestartet hat überprüfen, folgendes im Browser aufrufen: http://localhost:8088/
-
-</textarea>
-</section>
-
-<section data-markdown  class="hands-on">
-	<textarea data-template>
-## Hands-On 2 - Projekt vorbereiten
-
-1. Installieren (falls noch nicht passiert)
-   * Git : https://git-scm.com/downloads
-1. Projekt klonen
-   * https://github.com/openknowledge/mlops-m3
-   * `git clone git@github.com:openknowledge/mlops-m3.git`
-1. Docker images bauen
-   * Im Projekt-Verzeichnis unter `insurance-prediction`:
-     * `docker build -t insurance_prediction_interactive -f interactive.Dockerfile .`
-     * `docker build -t insurance-prediction .`
-   * Das kann (gerade bei überlastetem Netz) lange dauern
-   * Wir müssen jetzt noch nicht bis zum Abschluss warten 
-</textarea>
-</section>
-
-<section data-markdown class="fragments">
-<textarea data-template>
-### Vom Notebook zum Projekt
-
-<img src="img/professionalization/notebook_architecture.png" class="fragment" style="height: 50vh;">
-
-</textarea>
-</section>
-<!--
-	<section data-markdown class="fragments">
-		<textarea data-template>
-### Was gehört in Module/Bibliotheken und Skripte ausgelagert?
-
-* Wir können nicht mit einem Notebook in Produktion gehen
-  * also muss alles was wir in Produktion brauchen aus den Notebooks herausgezogen werden
-* Bestimmte Teile eines Notebooks haben sich als stabil herausgestellt und sollten nicht bei jeder Kopie entkoppelt werden
-* Alles was sich nach Software anfühlt (Klassen, Funktionen, etc.) ist auch Software
-  * diese Teile sollten auch wie solche behandelt werden
-* Professionalisierung muss oft gut abhängen
-  * Es stellt sich erst langsam heraus, was in ein Modul gehört
-  * erste Version der extrahierten Module ist mit Sicherheit nicht endgültig
-* Manche (Teile von) Notebooks werden in Phase II zu Skripten, die eine dünne API um die Module sind
-</textarea>
-	</section>
--->
-
 <section data-markdown>
   <textarea data-template>
 ### Nicht aller Code ist für Produktion gedacht
@@ -588,52 +463,17 @@ Helft bitte euren Nachbarn, falls eure Installation schon läuft
 </textarea>
 </section>
 
-<section data-markdown>
-<textarea data-template>
-<img src="img/professionalization/architecture.png" style="height: 50vh;"/>
-</textarea>
-</section>
-
-<section data-markdown>
-<textarea data-template>
-# Demo - Training und Validierung
-</textarea>
-</section>
-  
-<section data-markdown class="hands-on" id="hands-on-professionalisierung">
+<section data-markdown class="demo">
 	<textarea data-template>
-### Hands-On 3 - Training und Validierung
-
-* Entwicklungsumgebung über Docker starten
-
-```sh
-cd insurance-prediction
-```
-
-```
-# Linux/Mac/WSL-Shell
-docker run -v "$(pwd)/output:/output" --rm -it insurance_prediction_interactive
-
-# Windows-Cmd
-docker run -v "%cd%/output:/output" --rm -it insurance_prediction_interactive
-
-# Powershell
-docker run -v "$(Get-Location)/output:/output" --rm -it insurance_prediction_interactive
-```
-
-*Aufgabe:* Was ist passiert, was ist zu sehen?
-
-</textarea>
-</section>
-
-
-<section data-markdown class="hands-on" id="hands-on-professionalisierung">
-	<textarea data-template>
-### Hands-On 4 - Training und Validierung
+## Demo     
+### Training und Validierung
 
 * Training und Validierung im interaktiven Container durchführen
 
-```
+```sh
+cd insurance-prediction
+docker run -v "$(pwd)/output:/output" --rm -it insurance_prediction_interactive
+
 poetry run train --dataset ./datasets/insurance_prediction --model /output/model.h5
 poetry run validate --dataset ./datasets/insurance_prediction/ --model /output/model.h5
 ```
@@ -642,38 +482,30 @@ poetry run validate --dataset ./datasets/insurance_prediction/ --model /output/m
 
 <section data-markdown class="hands-on">
 	<textarea data-template>
-## Hands-On 5 - Wie wollen wir das Modell validieren?
+## Diskussion 
+### Wie wollen wir das Modell validieren?
 
 * bei automatisiertem Training können wir ein erfolgreiches Training nicht mehr manuell überwachen
 * wie könnten automatisierte Tests auf dem Modell aussehen?
 * Diskutiert mit euren Nachbarn und schreibt eure Vorschläge auf
 * Inspiration: https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45742.pdf
 
+_5 Minuten_
 </textarea>
 </section>
 
 <section data-markdown class="fragments">
 <textarea data-template>
-### Demo: Vom Modell in die Welt - API
-
-</textarea>
-</section>
-
-<section data-markdown class="fragments">
-<textarea data-template>
-### Hands-On 6 - ML-Service
+## Demo 
+### Vom Modell in die Welt - API
 
 ```sh
 cd insurance-prediction
 
 docker run --rm -p 8080:80 insurance-prediction
+http://localhost:8080/
+Eine Prediction mit Swagger durchführen
 ```
-
-*Aufgabe 1:* Was ist im dazugehörigen Dockerfile passiert? 
-
-*Aufgabe 2:* Rufe `http://localhost:8080/` im Browser auf
-
-*Aufgabe 3:* Führe dort eine Prediction durch
 
 </textarea>
 </section>
@@ -696,7 +528,6 @@ docker run --rm -p 8080:80 insurance-prediction
 ```
 </textarea>
 </section>
-<!--
 <section data-markdown class="todo">
 	<textarea data-template>
 ### Ein ML Modell geht nicht für sich allein in Produktion
@@ -706,6 +537,7 @@ docker run --rm -p 8080:80 insurance-prediction
 </textarea>
 </section>
 
+<!--
 <section data-markdown class="fragments">
 	<textarea data-template>
 ### Warum Ensemble/Fallback?
@@ -740,12 +572,6 @@ docker run --rm -p 8080:80 insurance-prediction
 </section> 
 
 -->
-<section data-markdown class="hands-on">
-  <textarea data-template>
-## Ausblick auf den Block nach der Mittagspause
-
-</textarea>
-</section>
 
 <section data-markdown>
 	<textarea data-template>
@@ -814,69 +640,17 @@ https://www.redhat.com/en/topics/devops/what-is-ci-cd
 
 <img src="img/professionalization/terraform-stack.png" style="height: 50vh">
 
-https://bit.ly/3NSBj8k
 	</textarea>
 </section>
 
             <section data-markdown style="font-size: x-large;">
 	<textarea data-template>
-### Hands-On 7: KinD Cluster mit CI/CD aufsetzen
-
-Ablauf:
-1. Die README.md beschreibt was zu tun ist und welche Befehle ausgeführt werden müssen.
-1. Wenn das erste init und apply erfolgreich durchgelaufen ist der sanity check:
-   1. http://gitea.local/explore/repos / http://localhost:30030/explore/repos
-   1. http://tekton.localhost/#/pipelineruns - http://localhost:30097/#/pipelineruns
-1. Zurück zur README.md - Die zweite stage ausführen.
-   1. In Tekton sollten nun 2 Pipelines angestoßen worden sein. Eine davon stößt direkt nach Durchlauf
-        eine dritte an.
-   1. In Gitea können wir nun die Repositories checken.
-   1. Ist der Build komplett durchgelaufen, können wir jetzt auch die Anwendung checken.
-        http://insurance-prediction.localhost / http://localhost:30080
-1. Den build failen lassen, indem wir das Modell verschlechtern, so dass die Tests nicht mehr durchlaufen.
+## Demo    
+### CI/CD
 
 </textarea>
             </section>
 
-            <section data-markdown>
-	<textarea data-template>
-### Hands-On 7: KinD Cluster mit CI/CD aufsetzen
-
-Wie geht das?
-
-1. Falls ihr Gitea nicht mehr im Tab offen habt: Hier liegt unser Source-Code http://gitea.local/explore/repos
-   1. Login: ok-user / Password1234!
-   1. Insurance Prediction Repository öffnen (Das heißt aktuell ok-gitea-repository)
-        http://gitea.local/ok-user/ok-gitea-repository/src/branch/main/src/insurance_prediction/train/train.py
-   1. Hier die Kapazität herunter schrauben
-   1. Auf Tekton läuft die Pipeline, die durch den push getriggert wird:
-        http://tekton.localhost/#/namespaces/cicd/pipelineruns
-
-</textarea>
-            </section>
-
-<section data-markdown>
-	<textarea data-template>
-### Alternative Kubeflow?
-
-_"The Machine Learning Toolkit for Kubernetes"_
-* Notebooks, Training, Serving und Pipelines für ML
-* Ausgereiftheit, Stabilität und Aktualität der Dokumentation nach wie vor problematisch
-* Trial im Thoughtworks Radar seit April 2023
-* Könnte in Zukunft bei uns
-  * vor allem Tekton aber auch
-  * Training-Scripte und
-  * Teile des Servings ersetzen
-
-https://www.kubeflow.org/
-<br>
-https://www.thoughtworks.com/de-de/radar/tools/kubeflow
-<br>
-https://www.datarevenue.com/de-blog/kubeflow-noch-nicht-bereit-fur-produktion
-
-
-</textarea>
-</section>
 
 <section data-markdown>
 	<textarea data-template>
@@ -908,6 +682,16 @@ Das gilt nicht nur für ML Anwendungen, aber bei diesen ist es offensichtlicher
 <img src='img/verfall-2.PNG'>
 
 Das gilt nicht nur für ML Anwendungen, aber bei diesen ist es offensichtlicher
+</textarea>
+</section>
+
+<section data-markdown class="hands-on">
+	<textarea data-template>
+## Diskussion
+### Wann soll man ein neues Modell in Produktion nehmen?
+
+* spricht etwas gegen tägliche Releases?
+
 </textarea>
 </section>
 
@@ -1168,9 +952,10 @@ https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
 
 	<section data-markdown class="hands-on">
 		<textarea data-template>
-## Hands-On - Monitoring und Sinn daraus machen
+## Demo      
+### Monitoring und Sinn daraus machen
 
-### Teil I: Services checken 
+#### Teil I: Services checken 
 
 1. Evidently Metrics: http://localhost:30080/metrics/
 1. Prometheus Time Series: http://localhost:30090
@@ -1198,21 +983,17 @@ https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
 
 	<section data-markdown class="hands-on">
 		<textarea data-template>
-## Hands-On - Monitoring und Sinn daraus machen
-
-### Teil II: Request simulieren
+## Demo      
+### Monitoring und Sinn daraus machen
+      
+#### Teil II: Request simulieren
 
 1. In Grafana das `Evidently Data Drift Dashboard` aufrufen: http://localhost:30031/d/U54hsxv7k/evidently-data-drift-dashboard?orgId=1&refresh=5s
 1. Requests simulieren als k8s Job
-```
+```sh
 cd drift_demo/
 kubectl create -f job.yaml
 ```
-1. Stelle sicher, dass sich das Dashboard aktualisiert
-1. Was beobachtest du?
-   * Welche Features driften?
-   * Wie kann man das erklären?
-   * Was könnte hier passiert sein?
 
 </textarea>
 	</section>
@@ -1269,6 +1050,15 @@ Wenn die Welt sich ändert, ist Drift zu erwarten und damit ok
 | *Data aber kein Prediction Drift*  | keine wichtigen Features geändert, das Modell ist robust genug für den Drift  | wichtige Features geändert, Modell extrapoliert nicht sinnvoll |
 | *Prediction aber kein Data Drift*  | ???  | wahrscheinlich Concept Drift, neue Analyse der Situation notwendig |
 |   |   |   |
+
+</textarea>
+</section>
+
+<section data-markdown class="hands-on">
+	<textarea data-template>
+## Diskussion
+### Wie kann man den Drift interpretieren?
+
 
 </textarea>
 </section>
@@ -1359,20 +1149,6 @@ Wenn die Welt sich ändert, ist Drift zu erwarten und damit ok
 
 <section data-markdown>
 <textarea data-template>
-## Wir gehen alle Themen nochmal durch und Zeit für offene Fragen
-
-</textarea>
-</section>
-
-<section data-markdown>
-  <textarea data-template>
-## Was würde man anders machen, wenn man es ernster meint?
-
-</textarea>
-</section>
-  
-<!-- <section data-markdown>
-<textarea data-template>
 ## Ausblick
 
 </textarea>
@@ -1420,7 +1196,7 @@ https://www.datarevenue.com/de-blog/kubeflow-noch-nicht-bereit-fur-produktion
 
 https://twitter.com/ChristophMolnar/status/1569644089724764160
 </textarea>
-</section> -->
+</section>
 
 		<section data-markdown>
 			<textarea data-template>
@@ -1430,12 +1206,6 @@ https://twitter.com/ChristophMolnar/status/1569644089724764160
 ### Wie bringt man ein ML-Modell in Produktion und hält es dort?
 
 Bleibt gern im Kontakt
-
-Tobias Kurzydym / tobias.kurzydym@openknowledge.de
-https://twitter.com/tkurzydym
-
-Yannick Habecker / yannick.habecker@openknowledge.de
-https://www.linkedin.com/in/yannick-habecker/
 
 Oliver Zeigermann / oliver@zeigermann.de
 https://www.linkedin.com/in/oliver-zeigermann-34989773/
