@@ -70,7 +70,7 @@ spec:
       secretName: ${kubernetes_secret.git_credentials.metadata.0.name}
   - name: input
     persistentVolumeClaim:
-      claimName: ${kubernetes_persistent_volume_claim.m3-demo-files.metadata.0.name}
+      claimName: ${kubernetes_persistent_volume_claim.mlops-demo-files.metadata.0.name}
   params:
   - name: repo-url
     value: http://gitea-http.infrastructure:3000/${var.gitea_username}/${var.gitea_repository_name}.git
@@ -106,7 +106,7 @@ spec:
       secretName: ${kubernetes_secret.git_credentials.metadata.0.name}
   - name: input
     persistentVolumeClaim:
-      claimName: ${kubernetes_persistent_volume_claim.m3-env-files.metadata.0.name}
+      claimName: ${kubernetes_persistent_volume_claim.mlops-env-files.metadata.0.name}
   params:
   - name: repo-url
     value: http://gitea-http.infrastructure:3000/${var.gitea_username}/${var.gitea_env_repository_name}.git
@@ -134,9 +134,9 @@ resource "kubectl_manifest" "ci_show_readme_task" {
   yaml_body  = file("${path.module}/tekton/show-readme-task.yaml")
 }
 
-resource "kubernetes_persistent_volume" "m3-demo-files" {
+resource "kubernetes_persistent_volume" "mlops-demo-files" {
   metadata {
-    name = "m3-demo-files-pv"
+    name = "mlops-demo-files-pv"
   }
 
   spec {
@@ -148,15 +148,15 @@ resource "kubernetes_persistent_volume" "m3-demo-files" {
 
     persistent_volume_source {
       host_path {
-        path = "/m3-demo/"
+        path = "/mlops-demo/"
       }
     }
   }
 }
 
-resource "kubernetes_persistent_volume_claim" "m3-demo-files" {
+resource "kubernetes_persistent_volume_claim" "mlops-demo-files" {
   metadata {
-    name = "m3-demo-files-pvc"
+    name = "mlops-demo-files-pvc"
     namespace = kubernetes_namespace.cicd.metadata.0.name
   }
 
@@ -167,13 +167,13 @@ resource "kubernetes_persistent_volume_claim" "m3-demo-files" {
         storage = "500Mi"
       }
     }
-    volume_name = kubernetes_persistent_volume.m3-demo-files.metadata.0.name
+    volume_name = kubernetes_persistent_volume.mlops-demo-files.metadata.0.name
   }
 }
 
-resource "kubernetes_persistent_volume" "m3-env-files" {
+resource "kubernetes_persistent_volume" "mlops-env-files" {
   metadata {
-    name = "m3-env-files-pv"
+    name = "mlops-env-files-pv"
   }
 
   spec {
@@ -185,15 +185,15 @@ resource "kubernetes_persistent_volume" "m3-env-files" {
 
     persistent_volume_source {
       host_path {
-        path = "/m3-env/"
+        path = "/mlops-env/"
       }
     }
   }
 }
 
-resource "kubernetes_persistent_volume_claim" "m3-env-files" {
+resource "kubernetes_persistent_volume_claim" "mlops-env-files" {
   metadata {
-    name = "m3-env-files-pvc"
+    name = "mlops-env-files-pvc"
     namespace = kubernetes_namespace.cicd.metadata.0.name
   }
 
@@ -204,7 +204,7 @@ resource "kubernetes_persistent_volume_claim" "m3-env-files" {
         storage = "500Mi"
       }
     }
-    volume_name = kubernetes_persistent_volume.m3-env-files.metadata.0.name
+    volume_name = kubernetes_persistent_volume.mlops-env-files.metadata.0.name
   }
 }
 
@@ -242,7 +242,7 @@ spec:
         generateName: commit-triggered-run-
         namespace: $(tt.params.namespace)
       spec:
-        serviceAccountName: ${kubernetes_service_account_v1.m3_build_sa.metadata.0.name}
+        serviceAccountName: ${kubernetes_service_account_v1.mlops_build_sa.metadata.0.name}
         pipelineRef:
           name: clone-read-and-build
         podTemplate:
@@ -290,7 +290,7 @@ metadata:
   name: ci-listener
   namespace: cicd
 spec:
-  serviceAccountName: m3-sa
+  serviceAccountName: mlops-sa
   triggers:
     - bindings:
         - ref: ci-pipelinebinding

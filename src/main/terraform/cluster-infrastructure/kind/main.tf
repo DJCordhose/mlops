@@ -1,5 +1,5 @@
-resource "kind_cluster" "m3_demo_cluster" {
-  name           = "m3-demo-cluster"
+resource "kind_cluster" "mlops_demo_cluster" {
+  name           = "mlops-demo-cluster"
   wait_for_ready = true
   kubeconfig_path = pathexpand("~/.kube/config")
 
@@ -12,12 +12,12 @@ resource "kind_cluster" "m3_demo_cluster" {
 
       extra_mounts {
         host_path      = var.repository_path
-        container_path = "/m3-demo"
+        container_path = "/mlops-demo"
       }
 
       extra_mounts {
         host_path      = var.env_repo_path
-        container_path = "/m3-env"
+        container_path = "/mlops-env"
       }
 
       extra_mounts {

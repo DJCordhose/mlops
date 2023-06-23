@@ -46,9 +46,9 @@ spec:
           workspace: input
       params:
         - name: GIT_USER_NAME
-          value: "ok-user"
+          value: "mlops-user"
         - name: GIT_USER_EMAIL
-          value: "ok-user@user.dev"
+          value: "mlops-user@user.dev"
         - name: GIT_SCRIPT
           value: |
             git fetch

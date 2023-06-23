@@ -53,8 +53,8 @@ auch: `insurance-prediction/TASKS.md`
    - kommt man hier noch auf den Service drauf?
    
 1. Hier liegt unser Source-Code http://gitea.local/
-   1. Login: ok-user / Password1234!
-   1. http://gitea.local/ok-user/ok-gitea-repository/src/branch/main/src/insurance_prediction/train/train.py
+   1. Login: mlops-user / Password1234!
+   1. http://gitea.local/mlops-user/mlops-gitea-repository/src/branch/main/src/insurance_prediction/train/train.py
    1. Hier die Kapazität herunter schrauben
    1. Hier müsste eine neue Pipeline anlaufen: http://tekton.localhost/#/namespaces/cicd/pipelineruns
    1. Die müsste fehlschlagen nach ca. der hälfte der Zeit, weil schon das validieren fehlschlagen müsste
@@ -73,9 +73,9 @@ auch: `insurance-prediction/TASKS.md`
    1. Ist der Build komplett durchgelaufen, können wir jetzt auch die Anwendung checken.
         http://insurance-prediction.localhost / http://localhost:30080
 1. Den build failen lassen, indem wir das Modell verschlechtern, so dass die Tests nicht mehr durchlaufen.
-   1. Login: ok-user / Password1234!
-   1. Insurance Prediction Repository öffnen (Das heißt aktuell ok-gitea-repository)
-        http://gitea.local/ok-user/ok-gitea-repository/src/branch/main/src/insurance_prediction/train/train.py
+   1. Login: mlops-user / Password1234!
+   1. Insurance Prediction Repository öffnen (Das heißt aktuell mlops-gitea-repository)
+        http://gitea.local/mlops-user/mlops-gitea-repository/src/branch/main/src/insurance_prediction/train/train.py
    1. Hier die Kapazität herunter schrauben
    1. Auf Tekton läuft die Pipeline, die durch den push getriggert wird:
         http://tekton.localhost/#/namespaces/cicd/pipelineruns

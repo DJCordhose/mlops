@@ -63,6 +63,30 @@ in bestehende Software, die Aufteilung in Services und das Monitoring sprechen.
 Diese Session beschränkt sich nicht auf die Konzepte, sondern demonstriert diese anhand einer durchgängigen Anwendung.
  -->
 
+ <section data-markdown class="preparation">
+  <textarea data-template>
+
+## Vorbereitung
+* Allen Docker Kram einmal wegschmeißen
+
+### Docker Images bauen
+* `cd insurance-prediction`:
+   * `docker build -t insurance_prediction_interactive -f interactive.Dockerfile .`
+   * `docker build -t insurance-prediction .`
+
+### k8s Cluster aufsetzen
+* wie im Readme beschrieben
+* gucken, ob die Pipelines durchgelaufen sind: http://tekton.localhost/#/pipelineruns
+* einmal sind die zu früh gestartet, bevor die Definition angekommen ist, dann neu starten   
+  * `clone-read-run-env`
+  * `clone-read-run-initial`
+* das triggert `commit-triggered-run`, was evtl am poerty install fehlschlägt, dann das poerty lock im gitea löschen
+  * die Änderung triggert automatisch einen neuen Build  
+
+  </textarea>
+</section>
+
+
 			<section data-markdown>
 				<textarea data-template>
 # MLOps
@@ -88,6 +112,7 @@ Folien: https://bit.ly/oop-2023-mlops
 - Zeit-Plan für die 90 Minuten aufstellen
 - Folien kürzen
   - Bei Drift haben wir zu viel
+  - Max. 60 Folien, eher 50
 - Nochmal überlegen: könnten die Übungen was anderes sein als nur Labern?      
     </textarea>
   </section>
@@ -466,9 +491,22 @@ https://www.docker.com/resources/what-container/
 </textarea>
 </section>
 
+<section data-markdown class="hands-on">
+	<textarea data-template>
+## Diskussion 
+### Wie wollen wir das Modell validieren?
+
+* bei automatisiertem Training können wir ein erfolgreiches Training nicht mehr manuell überwachen
+* wie könnten automatisierte Tests auf dem Modell aussehen?
+* Diskutiert mit euren Nachbarn und schreibt eure Vorschläge auf
+
+_5 Minuten_
+</textarea>
+</section>
+
 <section data-markdown class="demo">
 	<textarea data-template>
-## Demo     
+## Demo - Schritt 1
 ### Training und Validierung
 
 * Training und Validierung im interaktiven Container durchführen
@@ -483,23 +521,18 @@ poetry run validate --dataset ./datasets/insurance_prediction/ --model /output/m
 </textarea>
 </section>
 
-<section data-markdown class="hands-on">
+<section data-markdown>
 	<textarea data-template>
-## Diskussion 
-### Wie wollen wir das Modell validieren?
+### Ein ML Modell geht nicht für sich allein in Produktion
 
-* bei automatisiertem Training können wir ein erfolgreiches Training nicht mehr manuell überwachen
-* wie könnten automatisierte Tests auf dem Modell aussehen?
-* Diskutiert mit euren Nachbarn und schreibt eure Vorschläge auf
-* Inspiration: https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45742.pdf
+<img src="img/ml-system.jpg" style="height: 550px;">
 
-_5 Minuten_
 </textarea>
 </section>
 
 <section data-markdown class="fragments">
 <textarea data-template>
-## Demo 
+## Demo - Schritt 2
 ### Vom Modell in die Welt - API
 
 ```sh
@@ -529,14 +562,6 @@ Eine Prediction mit Swagger durchführen
   "predictor_type": "MODEL"
 }
 ```
-</textarea>
-</section>
-<section data-markdown class="todo">
-	<textarea data-template>
-### Ein ML Modell geht nicht für sich allein in Produktion
-
-<img src="img/ml-system.jpg" style="height: 550px;">
-
 </textarea>
 </section>
 
@@ -650,6 +675,13 @@ https://www.redhat.com/en/topics/devops/what-is-ci-cd
 	<textarea data-template>
 ## Demo    
 ### CI/CD
+
+```sh
+http://tekton.localhost/#/pipelineruns
+
+
+```
+
 
 </textarea>
             </section>
@@ -1203,16 +1235,20 @@ https://twitter.com/ChristophMolnar/status/1569644089724764160
 
 		<section data-markdown>
 			<textarea data-template>
-# Vielen Dank
+## Vielen Dank
 
-## MLOps
-### Wie bringt man ein ML-Modell in Produktion und hält es dort?
+### MLOps - Wie bringt man ein ML-Modell in Produktion und hält es dort?
 
 Bleibt gern im Kontakt
 
 Oliver Zeigermann / oliver@zeigermann.de
+<br>
 https://www.linkedin.com/in/oliver-zeigermann-34989773/
 https://twitter.com/DJCordhose
+
+<img src="img/bit.ly_oop-2023-mlops.png" style="height: 150px;">
+
+Folien: https://bit.ly/oop-2023-mlops
 
 </textarea>
 		</section>

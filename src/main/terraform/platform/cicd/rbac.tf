@@ -1,6 +1,6 @@
-resource "kubernetes_role_binding_v1" "m3_sa" {
+resource "kubernetes_role_binding_v1" "mlops_sa" {
   metadata {
-    name      = "m3-trigger-eventlistener-binding"
+    name      = "mlops-trigger-eventlistener-binding"
     namespace = kubernetes_namespace.cicd.metadata.0.name
   }
   role_ref {
@@ -10,15 +10,15 @@ resource "kubernetes_role_binding_v1" "m3_sa" {
   }
   subject {
     kind      = "ServiceAccount"
-    name      = "m3-sa"
+    name      = "mlops-sa"
     namespace = kubernetes_namespace.cicd.metadata.0.name
     api_group = "" #TODO ugly
   }
 }
 
-resource "kubernetes_cluster_role_binding_v1" "m3_sa" {
+resource "kubernetes_cluster_role_binding_v1" "mlops_sa" {
   metadata {
-    name = "m3-trigger-eventlistener-cluster-binding"
+    name = "mlops-trigger-eventlistener-cluster-binding"
   }
   role_ref {
     kind      = "ClusterRole"
@@ -27,49 +27,49 @@ resource "kubernetes_cluster_role_binding_v1" "m3_sa" {
   }
   subject {
     kind      = "ServiceAccount"
-    name      = "m3-sa"
+    name      = "mlops-sa"
     namespace = kubernetes_namespace.cicd.metadata.0.name
     api_group = ""
   }
 }
 
-resource "kubernetes_service_account_v1" "m3_sa" {
+resource "kubernetes_service_account_v1" "mlops_sa" {
   metadata {
-    name = "m3-sa"
+    name = "mlops-sa"
     namespace = kubernetes_namespace.cicd.metadata.0.name
   }
   secret {
-    name = kubernetes_secret_v1.m3_sa.metadata.0.name
+    name = kubernetes_secret_v1.mlops_sa.metadata.0.name
   }
 }
 
-resource "kubernetes_secret_v1" "m3_sa" {
+resource "kubernetes_secret_v1" "mlops_sa" {
   metadata {
-    name = "m3-sa"
+    name = "mlops-sa"
     namespace = kubernetes_namespace.cicd.metadata.0.name
   }
 }
 
-resource "kubernetes_service_account_v1" "m3_build_sa" {
+resource "kubernetes_service_account_v1" "mlops_build_sa" {
   metadata {
-    name = "m3-build-sa"
+    name = "mlops-build-sa"
     namespace = kubernetes_namespace.cicd.metadata.0.name
   }
   secret {
-    name = kubernetes_secret_v1.m3_build_sa.metadata.0.name
+    name = kubernetes_secret_v1.mlops_build_sa.metadata.0.name
   }
 }
 
-resource "kubernetes_secret_v1" "m3_build_sa" {
+resource "kubernetes_secret_v1" "mlops_build_sa" {
   metadata {
-    name = "m3-build-sa"
+    name = "mlops-build-sa"
     namespace = kubernetes_namespace.cicd.metadata.0.name
   }
 }
 
-resource "kubernetes_role_binding_v1" "m3_build_sa" {
+resource "kubernetes_role_binding_v1" "mlops_build_sa" {
   metadata {
-    name      = "m3-build-role-binding"
+    name      = "mlops-build-role-binding"
     namespace = kubernetes_namespace.cicd.metadata.0.name
   }
   role_ref {
@@ -79,15 +79,15 @@ resource "kubernetes_role_binding_v1" "m3_build_sa" {
   }
   subject {
     kind      = "ServiceAccount"
-    name      = kubernetes_service_account_v1.m3_build_sa.metadata.0.name
+    name      = kubernetes_service_account_v1.mlops_build_sa.metadata.0.name
     namespace = kubernetes_namespace.cicd.metadata.0.name
     api_group = "" #TODO ugly
   }
 }
 
-resource "kubernetes_cluster_role_binding_v1" "m3_build_sa" {
+resource "kubernetes_cluster_role_binding_v1" "mlops_build_sa" {
   metadata {
-    name = "m3-build-cluster-binding"
+    name = "mlops-build-cluster-binding"
   }
   role_ref {
     kind      = "ClusterRole"
@@ -96,7 +96,7 @@ resource "kubernetes_cluster_role_binding_v1" "m3_build_sa" {
   }
   subject {
     kind      = "ServiceAccount"
-    name      = kubernetes_service_account_v1.m3_build_sa.metadata.0.name
+    name      = kubernetes_service_account_v1.mlops_build_sa.metadata.0.name
     namespace = kubernetes_namespace.cicd.metadata.0.name
     api_group = ""
   }
