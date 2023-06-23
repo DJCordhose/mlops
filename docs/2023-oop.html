@@ -63,7 +63,7 @@ in bestehende Software, die Aufteilung in Services und das Monitoring sprechen.
 Diese Session beschränkt sich nicht auf die Konzepte, sondern demonstriert diese anhand einer durchgängigen Anwendung.
  -->
 
- <section data-markdown class="preparation">
+ <section data-markdown class="preparation" style="font-size: large;">
   <textarea data-template>
 
 ## Vorbereitung
@@ -676,11 +676,22 @@ https://www.redhat.com/en/topics/devops/what-is-ci-cd
 ## Demo    
 ### CI/CD
 
-```sh
-http://tekton.localhost/#/pipelineruns
+1. Code im Repo: http://gitea.local/explore/repos
+1. CI/CD: http://tekton.localhost/#/pipelineruns
+1. Service hier ausprobieren: http://localhost:30080/
+1. k9s
+   - Läuft da ein pod im production Namespace? Das ist unsere Anwendung
+   - Platt machen und gucken, was passiert
+   - kommt man hier noch auf den Service drauf?
+1. Den build failen lassen, indem wir das Modell verschlechtern, so dass die Tests nicht mehr durchlaufen.
+   1. Login: mlops-user / Password1234!
+   1. Insurance Prediction Repository öffnen (Das heißt aktuell mlops-gitea-repository)
+        http://gitea.local/mlops-user/mlops-gitea-repository/src/branch/main/src/insurance_prediction/train/train.py
+   1. Hier die Kapazität herunter schrauben
+   1. Auf Tekton läuft die Pipeline, die durch den push getriggert wird:
+        http://tekton.localhost/#/namespaces/cicd/pipelineruns
+  1. Das bauen des neuen Images wird erneut getriggert, das Ergebnis müssen wir aber nicht mehr abwarten, können wir aber später noch einmal checken
 
-
-```
 
 
 </textarea>

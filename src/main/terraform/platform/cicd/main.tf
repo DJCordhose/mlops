@@ -316,7 +316,7 @@ spec:
     - name: gitrepositoryurl
       value: "http://gitea-http.infrastructure:3000/$(body.repository.full_name)"
     - name: envgitrepositoryurl
-      value: "http://gitea-http.infrastructure:3000/ok-user/environment-repository.git"
+      value: "http://gitea-http.infrastructure:3000/mlops-user/environment-repository.git"
     - name: imagereference
       value: "insurance-prediction:$(body.head_commit.id)"
     - name: path-to-patch-file
