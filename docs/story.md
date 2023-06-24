@@ -97,8 +97,7 @@ auch: `insurance-prediction/TASKS.md`
    1. `./scripts/curl-drift.sh localhost:30080`
    1. oder ```
 cd drift_demo/
-kubectl delete -f job.yaml
-kubectl apply -f job.yaml
+kubectl create -f job.yaml
    ```
    1. `http://localhost:30080/metrics/`
    1. `http://localhost:30031/d/U54hsxv7k/evidently-data-drift-dashboard?orgId=1&refresh=5s`

@@ -103,8 +103,48 @@ Folien: https://bit.ly/oop-2023-mlops
     </textarea>
 			</section>
 
+
+      
+    <section data-markdown class="todo">
+      <textarea data-template>
+### ODSC
+
+- Nach dem Talk mit Generischen Namen ausprobieren
+- oder vorher auf dem Gaming Laptop: 
+- Liegt es am Webhook in Gitea, Antwort von Tobi:
+Der commit trigger ist so implementiert, dass er auf commits in den main branch auf dem gitea repository reagiert.
+Wenn du sagst anderes setup, achte auch drauf, dass in Gitea dann der Webhook sauber angelegt worden ist im Gitea
+Repository. (Das kann man mit dem Admin User in den Settings des repos nachschauen)
+
+Ansonsten mal im Tekton Dashboard prüfen ob die resourcen alle auch tatsächlich angelegt worden sind.(commit-trigger
+usw)
+
+Drift-Repo: 
+- docker compose
+- Hier gibt es schon ein Docker Compose, vielleicht kann ich mich da bedienen oder zumindest inspirieren lassen
+  - https://www.evidentlyai.com/blog/batch-ml-monitoring-architecture
+  - https://github.com/evidentlyai/evidently/tree/main/examples/integrations/postgres_grafana_batch_monitoring
+  - https://github.com/evidentlyai/evidently/tree/main/examples/integrations/grafana_monitoring_service
+  - https://github.com/evidentlyai/evidently/tree/main/examples/integrations/fastapi_monitoring
+- Mit Installationsanweisung und Check, ob es geht.  
+- Nur Linux, Mac, oder Windows WSL2
+- Falls Problem, Issue anlegen
+      </textarea>
+    </section>
+      
+    <section data-markdown class="todo">
+      <textarea data-template>
+### Darbietung / Story
+
+- Stringenz in der Story / therefor and but, not and then: https://www.instagram.com/reel/CtxLMBDA35H/?igshid=MTc4MmM1YmI2Ng%3D%3D
+- Für die Zusammenfassung B drücken und mich nach vorn stellen
+
+  </textarea>
+</section>
+
   <section data-markdown class="todo">
     <textarea data-template>
+- Pipeline Folien machen (todo im Foliensatz)      
 - Zine basteln und die entscheidenden Bilder nutzen       
 - Alles nochmal durchspielen, 
   - was kann man realistisch auch ohne Netz zeigen?
@@ -664,6 +704,54 @@ https://www.redhat.com/en/topics/devops/what-is-ci-cd
 
 <section data-markdown>
 	<textarea data-template>
+## CI/CD Pipelines für ML
+</textarea>
+</section>
+
+<section data-markdown class="todo">
+  <textarea data-template>
+### Pipeline
+
+- Bei Pipeline eher so Möglichkeiten aufzählen
+- kuberflow
+- airflow  
+- Tekton haben wir benutzt
+
+Will man sich sowas antun?
+
+Eher gemanagte Umgebung nehmen?
+
+Sage Maker, Clarify (Clarity?) Oder so
+  </textarea>
+</section>
+  
+
+<section data-markdown>
+	<textarea data-template>
+### Kubeflow
+
+_"The Machine Learning Toolkit for Kubernetes"_
+* Notebooks, Training, Serving und Pipelines für ML
+* Ausgereiftheit, Stabilität und Aktualität der Dokumentation nach wie vor problematisch
+* Trial im Thoughtworks Radar seit April 2023
+* Könnte in Zukunft bei uns
+  * vor allem Tekton aber auch
+  * Training-Scripte und
+  * Teile des Servings ersetzen
+
+https://www.kubeflow.org/
+<br>
+https://www.thoughtworks.com/de-de/radar/tools/kubeflow
+<br>
+https://www.datarevenue.com/de-blog/kubeflow-noch-nicht-bereit-fur-produktion
+
+
+</textarea>
+</section>
+
+
+<section data-markdown>
+	<textarea data-template>
 ### Terraform Stack
 
 <img src="img/professionalization/terraform-stack.png" style="height: 50vh">
@@ -684,13 +772,12 @@ https://www.redhat.com/en/topics/devops/what-is-ci-cd
    - Platt machen und gucken, was passiert
    - kommt man hier noch auf den Service drauf?
 1. Den build failen lassen, indem wir das Modell verschlechtern, so dass die Tests nicht mehr durchlaufen.
-   1. Login: mlops-user / Password1234!
-   1. Insurance Prediction Repository öffnen (Das heißt aktuell mlops-gitea-repository)
+   1. Insurance Prediction Repository öffnen
         http://gitea.local/mlops-user/mlops-gitea-repository/src/branch/main/src/insurance_prediction/train/train.py
    1. Hier die Kapazität herunter schrauben
    1. Auf Tekton läuft die Pipeline, die durch den push getriggert wird:
         http://tekton.localhost/#/namespaces/cicd/pipelineruns
-  1. Das bauen des neuen Images wird erneut getriggert, das Ergebnis müssen wir aber nicht mehr abwarten, können wir aber später noch einmal checken
+   1. Das bauen des neuen Images wird erneut getriggert, das Ergebnis müssen wir aber nicht mehr abwarten, können wir aber später noch einmal checken
 
 
 
@@ -733,7 +820,7 @@ Das gilt nicht nur für ML Anwendungen, aber bei diesen ist es offensichtlicher
 
 <section data-markdown class="hands-on">
 	<textarea data-template>
-## Diskussion
+## Diskussion im Plenum?
 ### Wann soll man ein neues Modell in Produktion nehmen?
 
 * spricht etwas gegen tägliche Releases?
@@ -1034,6 +1121,7 @@ https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
       
 #### Teil II: Request simulieren
 
+1. Prometheus Metrics ansehen: http://localhost:30080/metrics/
 1. In Grafana das `Evidently Data Drift Dashboard` aufrufen: http://localhost:30031/d/U54hsxv7k/evidently-data-drift-dashboard?orgId=1&refresh=5s
 1. Requests simulieren als k8s Job
 ```sh
@@ -1193,32 +1281,17 @@ Wenn die Welt sich ändert, ist Drift zu erwarten und damit ok
 </textarea>
 </section>
 
-<section data-markdown>
+<section data-markdown class="fragments">
 <textarea data-template>
-## Ausblick
+## Offene Fragen
 
 </textarea>
 </section>
 
+
 <section data-markdown>
-	<textarea data-template>
-### Kubeflow
-
-_"The Machine Learning Toolkit for Kubernetes"_
-* Notebooks, Training, Serving und Pipelines für ML
-* Ausgereiftheit, Stabilität und Aktualität der Dokumentation nach wie vor problematisch
-* Trial im Thoughtworks Radar seit April 2023
-* Könnte in Zukunft bei uns
-  * vor allem Tekton aber auch
-  * Training-Scripte und
-  * Teile des Servings ersetzen
-
-https://www.kubeflow.org/
-<br>
-https://www.thoughtworks.com/de-de/radar/tools/kubeflow
-<br>
-https://www.datarevenue.com/de-blog/kubeflow-noch-nicht-bereit-fur-produktion
-
+<textarea data-template>
+## Ausblick
 
 </textarea>
 </section>
