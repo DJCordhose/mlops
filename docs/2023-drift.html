@@ -65,7 +65,16 @@ MLOps and Data Engineering
 
 		<section data-markdown class="todo">
 			<textarea data-template>
+### Aufbau				
 
+Teil 1: so wie OOP, Fallbeispiel etc. Man hat Drift festgestellt
+Teil 2: Interpretation, Analyse, Abhilfe
+
+</textarea>
+		</section>
+		<section data-markdown class="todo">
+			<textarea data-template>
+## Drift Repo
 ### Part I:        
 - Docker compose für alles bauen
 - Drift Repo bauen Docker files Top Level bereithalten
@@ -73,8 +82,40 @@ MLOps and Data Engineering
 ### Part II:        
 - analytics notebook hierher bringen
 - Schritte fürs Neutrainieren       
+
 </textarea>
 		</section>
+
+
+		    <section data-markdown class="todo">
+      <textarea data-template>
+### ODSC, nach OOP Talk
+
+- Nach dem Talk mit Generischen Namen ausprobieren
+- oder vorher auf dem Gaming Laptop: 
+- Liegt es am Webhook in Gitea, Antwort von Tobi:
+Der commit trigger ist so implementiert, dass er auf commits in den main branch auf dem gitea repository reagiert.
+Wenn du sagst anderes setup, achte auch drauf, dass in Gitea dann der Webhook sauber angelegt worden ist im Gitea
+Repository. (Das kann man mit dem Admin User in den Settings des repos nachschauen)
+
+Ansonsten mal im Tekton Dashboard prüfen ob die resourcen alle auch tatsächlich angelegt worden sind.(commit-trigger
+usw)
+
+Drift-Repo: 
+- docker compose
+- Hier gibt es schon ein Docker Compose, vielleicht kann ich mich da bedienen oder zumindest inspirieren lassen
+  - https://www.evidentlyai.com/blog/batch-ml-monitoring-architecture
+  - https://github.com/evidentlyai/evidently/tree/main/examples/integrations/postgres_grafana_batch_monitoring
+  - https://github.com/evidentlyai/evidently/tree/main/examples/integrations/grafana_monitoring_service
+  - https://github.com/evidentlyai/evidently/tree/main/examples/integrations/fastapi_monitoring
+- Mit Installationsanweisung und Check, ob es geht.  
+- Nur Linux, Mac, oder Windows WSL2
+- Falls Problem, Issue anlegen
+
+      </textarea>
+    </section>
+      
+
 
 		</div>
 	</div>
