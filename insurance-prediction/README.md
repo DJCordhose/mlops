@@ -41,3 +41,19 @@ poetry run validate --dataset ./datasets/insurance_prediction/ --model ./model.h
 ```
 poetry run simulate-drift --dataset ./datasets/insurance_prediction/ --base_url http://localhost:30080/
 ```
+
+## Docker
+
+```
+docker compose up
+```
+
+* ML Service 
+  * Swagger http://localhost:8080
+  * Metrics: http://localhost:8080/metrics/
+* Prometheus
+  * Query: http://localhost:9090/
+  * Drift Gauge: http://localhost:9090/graph?g0.expr=drift_score_by_columns&g0.tab=1&g0.stacked=0&g0.show_exemplars=0&g0.range_input=1h
+  * Scrape Targets: http://localhost:9090/targets
+* Grafana Dashboard: http://localhost:3000/d/U54hsxv7k/evidently-data-drift-dashboard?orgId=1&refresh=5s
+* Simulate Production requests without need for local installation: ./scripts/curl-drift.sh localhost:8080
