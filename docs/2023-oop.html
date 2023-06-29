@@ -66,6 +66,10 @@ Diese Session beschränkt sich nicht auf die Konzepte, sondern demonstriert dies
  <section data-markdown class="preparation" style="font-size: large;">
   <textarea data-template>
 
+## Mitnehmen
+* Spicker
+* Buch (zur Verlosung)
+
 ## Vorbereitung
 * Allen Docker Kram einmal wegschmeißen
 
@@ -103,29 +107,13 @@ Folien: https://bit.ly/oop-2023-mlops
     </textarea>
 			</section>
 
-    <section data-markdown class="todo">
-      <textarea data-template>
-### Darbietung / Story
-
-- Stringenz in der Story / therefor and but, not and then: https://www.instagram.com/reel/CtxLMBDA35H/?igshid=MTc4MmM1YmI2Ng%3D%3D
-- Für die Zusammenfassung B drücken und mich nach vorn stellen
-
-  </textarea>
-</section>
-
   <section data-markdown class="todo">
     <textarea data-template>
-- Pipeline Folien machen (todo im Foliensatz)      
-- Zine basteln und die entscheidenden Bilder nutzen       
-- Alles nochmal durchspielen, 
-  - was kann man realistisch auch ohne Netz zeigen?
-  - funktioniert überhaupt noch alles?      
-- Zeit-Plan für die 90 Minuten aufstellen
-- Folien kürzen
-  - Bei Drift haben wir zu viel
-  - Max. 60 Folien, eher 50
+- Zine:
+  - erste Doppelseite Fallbeispiel
+  - zweite Prozess      
 - Nochmal überlegen: könnten die Übungen was anderes sein als nur Labern?
-- https://k8spatterns.io/      
+* Falls ich mich sehr langweile: https://aws.amazon.com/de/sagemaker/clarify/
     </textarea>
   </section>
   
@@ -176,7 +164,7 @@ Blue Collar ML Architect
 </section>
   
 
-<section data-markdown>
+<!-- <section data-markdown>
 	<textarea data-template>
 ## Stellt euch euren Nachbarn vor
 
@@ -192,7 +180,7 @@ _5 Minuten_
 Mit Fremden sprechen macht glücklich: https://www.instagram.com/reel/CsHP-DOMdKl/?igshid=NzJjY2FjNWJiZg%3D%3D
 </textarea>
 </section>
-
+ -->
 
 <section data-markdown class="fragments">
 	<textarea data-template>
@@ -207,7 +195,7 @@ Mit Fremden sprechen macht glücklich: https://www.instagram.com/reel/CsHP-DOMdK
 </textarea>
 </section>
 
-<section data-markdown>
+<!-- <section data-markdown>
 	<textarea data-template>
 ### Glossar / eingesetzte Werkzeuge
 
@@ -215,7 +203,7 @@ https://github.com/djcordhose/mlops/blob/main/docs/glossar.md
 
 </textarea>
 </section>
-
+ -->
 <section data-markdown>
 	<textarea data-template>
 ## Agenda
@@ -283,7 +271,7 @@ https://github.com/djcordhose/mlops/blob/main/docs/glossar.md
   *	*group* / *group_name*:	Einteilung in Gruppe anhand des Risikos
 </section> -->
 
-<section data-markdown>
+<!-- <section data-markdown>
 	<textarea data-template>
 ## Daten entstehen über die Zeit
 
@@ -292,7 +280,7 @@ Die Ground Truth (GT) kommt verzögert und kann sich über die Zeit noch veränd
 <img src="img/ground-truth-zeitstrahl.png">    
 
 </textarea>
-</section>
+</section> -->
 
 <section data-markdown style="font-size: xx-large;" class="hands-on">
   <textarea data-template>
@@ -344,28 +332,135 @@ einer praktsichen Anwendung aus
   * Data Science
 </section>
 
-<section data-markdown>
-	<textarea data-template>
-### Phasen eines ML Projekts
+<!-- <section data-markdown class="fragments">
+### MLOps 1.0 vs MLOps 2.0
 
-<img src="img/ml-workflow/6.PNG" class="fragment">
+- MLOps 1.0 - research / experiment centric
+  - Managing experiments  and Version control
+    - Model Architecture
+    - Training Code
+    - Data
+    - Artefacts
+      - Trained Model 
+      - Plots (learning curve, confusion matrix)
+  - Tools
+    - Mlflow
+    - Speadsheets
+    - Weights & Biases
+    - Comet
+- MLOps 2.0 - production first
+  - productionize, deploy, maintain
+  - Deployment Pipeline
+     - Model Repo
+       - Rather Image, as Model does not stand for itself most of the time, rather is a system
+       - Data Source and Preproc same code dev and prod (if possible)
+  - Real world environment
+  - Monitoring
+    - Gap between training and prod data?
+</section>
+ -->
+<section data-markdown class="fragments" lang="de">
+### MLOps 1.0 vs MLOps 2.0
 
-</textarea>
+- _MLOps 1.0 - Forschung, Experiment_
+  - Experimente verwalten und Versionieren
+    - Model Architecture
+    - Training COde
+    - Data
+    - Artefacts
+      - Trained Model 
+      - Plots (learning curve, confusion matrix)
+- _MLOps 2.0 - production first_
+  - professionalisieren, in Betrieb nehmen, warten
+  - Deployment Pipeline
+  - Monitoring
+    - Unterschied zwischen Trainings und Prod-Daten?
 </section>
 
+
+<section data-markdown>
+	<textarea data-template>
+  ### Machine Learning Projeke können in Phasen gedacht werden
+  
+  <img src='img/Prozess/phasen1.jpg' style="height: 100%;">
+  
+  </textarea>
+  </section>
+  
+<!-- <section data-markdown class="fragments">
+	<textarea data-template>
+### Was tun wenn ein Ansatz nicht erfolgversprechend ist
+  
+*kann überwiegende Mehrheit sein, positiven Aspekt betonen* 
+
+* Fail Fast: Aufwand für die späteren aufwändigen Phasen gespart
+* Lernerfolg dokumentieren und teilen
+* Eventuelle Analyseergebnisse als Einsichten zweitverwerten
+* _In Phase 0 vorbereiten und in die Fehlerkultur übernehmen_
+  
+  </textarea>
+</section>
+ -->
+
+<!-- <section data-markdown>
+	<textarea data-template>
+### When all the white sneakers you see are white
+
+<img src="img/inspiration/20230409_131604.jpg">		
+
+Confirmation Bias
+	</textarea>
+</section>
+ -->
+<!-- <section data-markdown>
+	<textarea data-template>
+### ML Vorhaben müssen machbar sein
+
+Forschungsprojekte vermeiden
+
+<div class="container">
+	<div class="col">
+		<img src="img/inspiration/20230412_122703.jpg">		
+	</div>
+	<div class="col">
+		<img src="img/inspiration/20230412_122440.jpg">		
+	</div>
+
+</div>
+
+<small>https://technikmuseum.berlin/
+</small>
+
+	</textarea>
+</section>
+
+
+<section data-markdown class="fragments">
+    <textarea data-template>
+### Make or Buy
+
+* buy: du kannst nicht viel beeinflussen, aber du musst auch nicht
+* make: du kannst viel beeinflussen, aber du musst auch
+* Make or Buy ist oft keine binäre Entscheidung
+* Es gibt verschiedene Grade der Vorfertigung
+
+https://medium.com/swlh/build-vs-buy-decision-619414efafc4
+    </textarea>
+</section> -->
+
 	<section data-markdown class="fragments">
-### Phase I: Exploration
+### Phase II: Experiment / Validierung
 
 das haben wir bisher gemacht
 
-* in der ersten Phase eines Machine Learning Projekts wird die Anwendungsidee validiert und ein
+* in dieser Phase eines Machine Learning Projekts wird die Anwendungsidee validiert und ein
 funktionsfähiges Modell entwickelt.
 * dabei ist ein schnelles iterieren und ausprobieren von Ideen zentral
 * das Ziel ist *nicht* ein sinnvolles Stück Software
 * Scripting passt hier besser als Programmieren als Ausdruck für die Tätigkeit
 * das Ziel ist eine schnelle Entwicklung
-* Phase I endet entweder mit
-  * einem funktionsfähigen Modell mit dem man in Phase II übergeht oder
+* Phase II endet entweder mit
+  * einem funktionsfähigen Modell mit dem man in Phase III übergeht oder
   * dem Verwerfen des Ansatzes
 
 	</section>
@@ -410,27 +505,27 @@ funktionsfähiges Modell entwickelt.
   <section data-markdown>
     <textarea data-template>
 
-  ### Phase II Professionalisierung
+  ### Phase III Implementierung / Professionalisierung
 
-  <img src="img/ml-workflow/6.PNG" class="fragment">
+  <img src='img/Prozess/phasen1.jpg' style="height: 100%;">
 
   </textarea>
   </section>
 
 <section data-markdown class="fragments">
 
-### Phase II Professionalisierung
+### Phase III Implementierung / Professionalisierung
 
 * Wie kommt die skizzierte Lösung in ein langlebiges Projekt?
 * Erfahrungen aus der "klassischen" Software-Entwicklung nutzen
 * Stabilität, Funktionalität und Reproduzierbarkeit gewährleisten
 * Wie schaffen wir die Grundlage für die Inbetriebnahme
-* Ziel der Phase II:
-  * Code und Modell mit dem man in Phase III (Betrieb) übergeht oder
-  * dem Iterieren zurück in Phase I mit neu gewonnenen Erkenntnissen oder falls Rahmenbedingungen nicht erfüllt werden
+* Ziel der Phase III:
+  * Code und Modell mit dem man in Phase IV (Betrieb) übergeht oder
+  * dem Iterieren zurück in Phase II mit neu gewonnenen Erkenntnissen oder falls Rahmenbedingungen nicht erfüllt werden
 </section>
 
-<section data-markdown class="fragments">
+<!-- <section data-markdown class="fragments">
 <textarea data-template>
 ### Erfahrungen aus der Software-Entwicklung
 
@@ -471,7 +566,7 @@ funktionsfähiges Modell entwickelt.
 ### Was brauchen wir noch?
  * Containerisierung → Docker
 </textarea>
-</section>
+</section> -->
 
 <section data-markdown class="fragments">
 <textarea data-template>
@@ -511,9 +606,6 @@ https://www.docker.com/resources/what-container/
 
 * bei automatisiertem Training können wir ein erfolgreiches Training nicht mehr manuell überwachen
 * wie könnten automatisierte Tests auf dem Modell aussehen?
-* Diskutiert mit euren Nachbarn und schreibt eure Vorschläge auf
-
-_5 Minuten_
 </textarea>
 </section>
 
@@ -627,24 +719,34 @@ Eine Prediction mit Swagger durchführen
 </section>
 
 	<section data-markdown class="fragments">
-### Phase III: Produktion / Betrieb
+### Phase IV: Produktion / Betrieb
 
 in der dritten Phase wird die Lösung in Betrieb genommen
 
 * alle Regeln des produktiven Einsatzes von Software gelten auch hier
 * Monitoring hat zusätzliche Herausforderungen
   * Natur und Verteilung der Anfragen und auch Vorhersagen muss permanent überwacht werden
-* Phase III endet entweder mit
+* Phase IV endet entweder mit
   * der Abschaltung
     * entweder bald weil nutzlos oder
     * später weil durch neues System ersetzt
-  * dem Iterieren zurück in Phase II mit neu gewonnenen Erkenntnissen
-  * dem Iterieren zurück in Phase I mit neu gewonnenen Erkenntnissen oder einem Neuansatz (häufig ebenfalls ein Zeichen für einen Fehlschlag)
+  * dem Iterieren zurück in Phase III mit neu gewonnenen Erkenntnissen
+  * dem Iterieren zurück in Phase II mit neu gewonnenen Erkenntnissen oder einem Neuansatz (häufig ebenfalls ein Zeichen für einen Fehlschlag)
 
 			</section>
 
-
 <section data-markdown>
+### Kubernetes aka k8s
+
+Antwort auf das Problem des Deployments von Containern in einem Cluster von Maschinen
+
+* https://kubernetes.io/
+* https://k8spatterns.io/ (freies PDF nach Registrierung)
+* Spicker      
+
+</section>
+
+<!-- <section data-markdown>
 	<textarea data-template>
 <img src='img/everybody-gansta.png' style="height: 600px">
 
@@ -655,7 +757,7 @@ https://twitter.com/karpathy/status/1486215976559398915
 
 </textarea>
 </section>
-
+ -->
 <section data-markdown>
 	<textarea data-template>
 ### CI/CD bei klassischem DevOps
@@ -673,64 +775,64 @@ https://www.redhat.com/en/topics/devops/what-is-ci-cd
 
 <img src="img/devops-vs-mlops.png" style="height: 600px">
 </textarea>
-</section> -->
-
+</section>
+ -->
 <section data-markdown>
 	<textarea data-template>
 ## CI/CD Pipelines für ML
+
+* kann generell ebenso ablaufen wie bei klassischer Software
+* kann auch mit klassischen CI/CD Tools wie Jenkins oder Gitlab CI umgesetzt werden  
+* kann auch mit k8s umgesetzt werden
+* k8s bietet hierfür auch eigene Lösungen
+  * https://www.kubeflow.org/docs/components/pipelines/
+  * https://tekton.dev/
+* oder auch mit https://airflow.apache.org/ 
+  * unabhängig von k8s
+
+
 </textarea>
 </section>
-
-<section data-markdown class="todo">
-  <textarea data-template>
-### Pipeline
-
-- Bei Pipeline eher so Möglichkeiten aufzählen
-- kuberflow
-- airflow  
-- Tekton haben wir benutzt
-
-Will man sich sowas antun?
-
-Eher gemanagte Umgebung nehmen?
-
-Sage Maker, Clarify (Clarity?) Oder so
-  </textarea>
-</section>
-  
 
 <section data-markdown>
 	<textarea data-template>
-### Kubeflow
+### Für diesen Workshop nutzen wir Tekton
 
-_"The Machine Learning Toolkit for Kubernetes"_
-* Notebooks, Training, Serving und Pipelines für ML
-* Ausgereiftheit, Stabilität und Aktualität der Dokumentation nach wie vor problematisch
-* Trial im Thoughtworks Radar seit April 2023
-* Könnte in Zukunft bei uns
-  * vor allem Tekton aber auch
-  * Training-Scripte und
-  * Teile des Servings ersetzen
+* Tekton ist ein k8s native CI/CD Lösung
+* Beschreibung der Pipelines erfolgt in YAML
+* Pipelines werden als k8s Ressourcen angelegt
+* Tekton ist eine allgemeine Lösung, nicht spezialisiert auf ML
 
-https://www.kubeflow.org/
-<br>
-https://www.thoughtworks.com/de-de/radar/tools/kubeflow
-<br>
-https://www.datarevenue.com/de-blog/kubeflow-noch-nicht-bereit-fur-produktion
+https://tekton.dev/
 
-
-</textarea>
+  </textarea>
 </section>
 
-
 <section data-markdown>
+  <textarea data-template>
+### Build Pipeline
+
+_wird per Webhook bei jedem Push auf das Repo getriggert_
+
+* clone Repo
+* docker build
+  * *kaniko* / https://github.com/GoogleContainerTools/kaniko: Docker Images bauen im k8s Cluster
+  * train
+  * validate
+* docker push: Image in Registry pushen
+* k8s apply: Deployment aktualisieren
+
+  </textarea>
+</section>
+
+<!-- <section data-markdown>
 	<textarea data-template>
 ### Terraform Stack
 
 <img src="img/professionalization/terraform-stack.png" style="height: 50vh">
 
 	</textarea>
-</section>
+</section> -->
 
             <section data-markdown style="font-size: x-large;">
 	<textarea data-template>
@@ -757,7 +859,31 @@ https://www.datarevenue.com/de-blog/kubeflow-noch-nicht-bereit-fur-produktion
 </textarea>
             </section>
 
+            
 
+<!-- <section data-markdown>
+	<textarea data-template>
+### Kubeflow als Alternative?
+
+_"The Machine Learning Toolkit for Kubernetes"_
+* Notebooks, Training, Serving und Pipelines für ML
+* Ausgereiftheit, Stabilität und Aktualität der Dokumentation nach wie vor problematisch
+* Trial im Thoughtworks Radar seit April 2023
+* Könnte in Zukunft bei uns
+  * vor allem Tekton aber auch
+  * Training-Scripte und
+  * Teile des Servings ersetzen
+
+https://www.kubeflow.org/
+<br>
+https://www.thoughtworks.com/de-de/radar/tools/kubeflow
+<br>
+https://www.datarevenue.com/de-blog/kubeflow-noch-nicht-bereit-fur-produktion
+
+
+</textarea>
+</section>
+ -->
 <section data-markdown>
 	<textarea data-template>
 ## Agenda
@@ -793,7 +919,7 @@ Das gilt nicht nur für ML Anwendungen, aber bei diesen ist es offensichtlicher
 
 <section data-markdown class="hands-on">
 	<textarea data-template>
-## Diskussion im Plenum?
+## Diskussion im Plenum
 ### Wann soll man ein neues Modell in Produktion nehmen?
 
 * spricht etwas gegen tägliche Releases?
@@ -841,7 +967,7 @@ Das gilt nicht nur für ML Anwendungen, aber bei diesen ist es offensichtlicher
 </section>
 
 
-<section data-markdown>
+<!-- <section data-markdown>
 <textarea data-template>
 ### Verteilung?
 
@@ -851,7 +977,7 @@ Das gilt nicht nur für ML Anwendungen, aber bei diesen ist es offensichtlicher
 <img src="img/nobel.svg">
 
 </textarea>
-</section>
+</section> -->
 
 
 <section data-markdown class="fragments">
@@ -865,14 +991,14 @@ Das Alter der Versicherten zum Zeitpunkt des Trainings
 </section>
 
 
-<section data-markdown class="fragments">
+<!-- <section data-markdown class="fragments">
 <textarea data-template>
 ### Zum Zeitpunkt des Trainings?
 
 <img src="img/drift_entschlackt.png" style="height: 100%;">
 
 </textarea>
-</section>
+</section> -->
 
 <!-- <section data-markdown class="fragments">
 <textarea data-template>
@@ -990,6 +1116,22 @@ es gibt leider nicht den einen passenden Test
   * unsere Datenmengen sind größer als 1000
 * manche können nicht nur auf numerischen sondern kategorischen Daten arbeiten
   * wir brauchen beides
+* evidently kann uns hier die Auswahl abnehmen  
+
+https://evidentlyai.com/blog/data-drift-detection-large-datasets
+</textarea>
+</section>
+
+<!-- <section data-markdown>
+	<textarea data-template>
+## Welcher Statistischer Test / welche Metrik?
+
+es gibt leider nicht den einen passenden Test
+
+* manche passen nur gut für kleine (< 1000) Datenmengen
+  * unsere Datenmengen sind größer als 1000
+* manche können nicht nur auf numerischen sondern kategorischen Daten arbeiten
+  * wir brauchen beides
 * manche sind zwischen 0 und 1 normiert
   * das ist uns eher egal
 * unsere Metriken
@@ -1035,7 +1177,7 @@ https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence
 https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
 </textarea>
 </section>
-
+ -->
 <section data-markdown>
 <textarea data-template>
 ### Ergebnisse der Tests der beiden potentiellen Drifts
@@ -1055,7 +1197,6 @@ https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
 </textarea>
 </section>
 
-
 	<section data-markdown class="hands-on">
 		<textarea data-template>
 ## Demo      
@@ -1070,12 +1211,6 @@ https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
 
 </textarea>
 	</section>
-
-  <section data-markdown>
-    <textarea data-template>
-### Unsere Zeitreise beginnt
-</textarea>
-</section>
 
 <section data-markdown>
   <textarea data-template>
@@ -1145,7 +1280,7 @@ kubectl create -f job.yaml
 
 </section> -->
 
-<section data-markdown style="font-size: x-large;">
+<!-- <section data-markdown style="font-size: x-large;">
 	<textarea data-template>
 ## Drift erfordert Interpretation
 
@@ -1160,7 +1295,7 @@ Wenn die Welt sich ändert, ist Drift zu erwarten und damit ok
 
 </textarea>
 </section>
-
+ -->
 <section data-markdown class="hands-on">
 	<textarea data-template>
 ## Diskussion
@@ -1207,14 +1342,14 @@ Wenn die Welt sich ändert, ist Drift zu erwarten und damit ok
 
 <section data-markdown class="fragments">
 	<textarea data-template>
-### Wir gehen zurück in die Phasen I und II
+### Wir gehen zurück in die Phasen II oder III
 
-* in Phase I wird wieder in Notebooks gearbeitet
+* in Phase II wird wieder in Notebooks gearbeitet
 * die Bibliotheken werden inkludiert und bei jeder Änderung neu geladen
 * Jupyter Lab bietet eine gemeine Oberfläche für Notebooks und Bibliotheken
 * Eine Kombination von Visual Studio Code und Jupyer Notebooks ist ebenso möglich
-* Rückkehr in Phase I muss nicht radikal sein
-  * wenn Ansatz vergleichbar kann Phase II so erhalten bleiben
+* Rückkehr in Phase II muss nicht radikal sein
+  * wenn Ansatz vergleichbar kann Phase III so erhalten bleiben
   * neue Ergebnisse fließen dann iterativ in die Professionalisierung ein
 </textarea>
 </section>
@@ -1262,7 +1397,7 @@ Wenn die Welt sich ändert, ist Drift zu erwarten und damit ok
 </section>
 
 
-<section data-markdown>
+<!-- <section data-markdown>
 <textarea data-template>
 ## Ausblick
 
@@ -1289,7 +1424,7 @@ Wenn die Welt sich ändert, ist Drift zu erwarten und damit ok
 https://twitter.com/ChristophMolnar/status/1569644089724764160
 </textarea>
 </section>
-
+ -->
 		<section data-markdown>
 			<textarea data-template>
 ## Vielen Dank
