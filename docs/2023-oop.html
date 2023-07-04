@@ -70,6 +70,8 @@ Diese Session beschränkt sich nicht auf die Konzepte, sondern demonstriert dies
 * Spicker
 * Buch (zur Verlosung)
 
+## Notebook aufmachen: https://colab.research.google.com/github/djcordhose/mlops/blob/main/insurance-prediction/notebooks/train.ipynb
+
 ## Vorbereitung
 * Allen Docker Kram einmal wegschmeißen
 
@@ -89,7 +91,6 @@ Diese Session beschränkt sich nicht auf die Konzepte, sondern demonstriert dies
 
   </textarea>
 </section>
-
 
 			<section data-markdown>
 				<textarea data-template>
@@ -594,6 +595,17 @@ https://www.docker.com/resources/what-container/
 </textarea>
 </section>
 
+<section data-markdown>
+	<textarea data-template>
+### Auch ML Modelle brauchen ein Build
+
+* Vorerst führen wir das Build von Hand aus
+* Wir haben 2 Scripte
+  1. Training: Das Modell wird trainiert und das fertig tranierte Modell Artefakt gespeichert
+  1. Test / Validierung: Das Modell wird auf Tauglichkeit für Produktion getestet
+</textarea>
+</section>
+
 <section data-markdown class="hands-on">
 	<textarea data-template>
 ## Diskussion 
@@ -603,6 +615,7 @@ https://www.docker.com/resources/what-container/
 * wie könnten automatisierte Tests auf dem Modell aussehen?
 </textarea>
 </section>
+
 
 <section data-markdown class="demo">
 	<textarea data-template>
