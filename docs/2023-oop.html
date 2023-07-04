@@ -871,22 +871,9 @@ _wird per Webhook bei jedem Push auf das Repo getriggert_
 1. Code im Repo: http://gitea.local/explore/repos
 1. CI/CD: http://tekton.localhost/#/pipelineruns
 1. Service hier ausprobieren: http://localhost:30080/
-1. k9s
-   - Läuft da ein pod im production Namespace? Das ist unsere Anwendung
-   - Platt machen und gucken, was passiert
-   - kommt man hier noch auf den Service drauf?
-1. Den build failen lassen, indem wir das Modell verschlechtern, so dass die Tests nicht mehr durchlaufen.
-   1. Insurance Prediction Repository öffnen
-        http://gitea.local/mlops-user/mlops-gitea-repository/src/branch/main/src/insurance_prediction/train/train.py
-   1. Hier die Kapazität herunter schrauben
-   1. Auf Tekton läuft die Pipeline, die durch den push getriggert wird:
-        http://tekton.localhost/#/namespaces/cicd/pipelineruns
-   1. Das bauen des neuen Images wird erneut getriggert, das Ergebnis müssen wir aber nicht mehr abwarten, können wir aber später noch einmal checken
-
-
 
 </textarea>
-            </section>
+    </section>
 
             
 
@@ -916,7 +903,7 @@ https://www.datarevenue.com/de-blog/kubeflow-noch-nicht-bereit-fur-produktion
 
  <section data-markdown>
 	<textarea data-template>
-### Wir bauen unser eigenes MLOps Zine
+### Exkurs: Wir bauen unser eigenes MLOps Zine
 
 <div class="container">
   <div class="col">
@@ -1140,14 +1127,29 @@ ML Performance Monitoring
 https://evidentlyai.com/
 </section>
  -->
-<section data-markdown>
+<!-- <section data-markdown>
 	<textarea data-template>
 ### Drift-Erkennung mit Prometheus, Evidently und Grafana
 
 <img src="img/mlops/grafana-evidently-drift.png">
 
 </textarea>
+</section> -->
+
+<section data-markdown class="hands-on">
+  <textarea data-template>
+## Demo      
+### Monitoring und Sinn daraus machen
+
+#### Teil I: Services checken 
+
+1. Evidently Metrics: http://localhost:30080/metrics/
+1. Prometheus Time Series: http://localhost:30090
+1. Grafana Dashboards: http://localhost:30031
+
+</textarea>
 </section>
+
 
 <section data-markdown>
 	<textarea data-template>
@@ -1251,21 +1253,6 @@ https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
 </textarea>
 </section>
 
-	<section data-markdown class="hands-on">
-		<textarea data-template>
-## Demo      
-### Monitoring und Sinn daraus machen
-
-#### Teil I: Services checken 
-
-1. Evidently Metrics: http://localhost:30080/metrics/
-1. Prometheus Time Series: http://localhost:30090
-1. Grafana Dashboards: http://localhost:30031
-   - login: admin/admin
-
-</textarea>
-	</section>
-
 <section data-markdown>
   <textarea data-template>
 ### Produktion simulieren
@@ -1288,7 +1275,7 @@ https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
 1. Requests simulieren als k8s Job
 ```sh
 cd drift_demo/
-kubectl create -f job.yaml
+kubectl apply -f job.yaml
 ```
 
 </textarea>
