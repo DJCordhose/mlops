@@ -109,19 +109,56 @@ Folien: https://bit.ly/oop-2023-mlops
 
   <section data-markdown class="todo">
     <textarea data-template>
-- Notebook als Phase 1 zeigen, damit die Leute wissen, womit man loslegt (falls nicht sowieso schon in den Folien)
 - k8s Story durchspielen
 - ML System als Miro English
-- Zine
-  - einbauen in der Mitte zum entspannen
-  - Zine Grafiken in Folien einbauen
-- Was kann man dafür noch rausschmeßen?  
+- Was kann man noch rausschmeßen?  
 
-- Nochmal überlegen: könnten die Übungen was anderes sein als nur Labern?
 * Falls ich mich sehr langweile: https://aws.amazon.com/de/sagemaker/clarify/
     </textarea>
   </section>
   
+<!-- <section data-markdown>
+	<textarea data-template>
+### MLOps - komplettes Zine
+
+<img src="img/zine/mlops.png" style="height: 530px;" class="fragment">
+
+<small>Bildunterschrit</small>
+	</textarea>
+</section>
+ -->
+<section data-markdown>
+	<textarea data-template>
+### Für ML braucht man viel Mathematik, oder?
+
+<img src="img/inspiration/matematica.jpg" style="height: 530px;">		
+
+<small>Sapienza Università di Roma - https://www.ing.uniroma1.it/
+</small>
+
+	</textarea>
+</section>
+
+<section data-markdown>
+	<textarea data-template>
+### Tatsächliche Herausforderungen \#1
+
+<img src="img/biggest_challenges_ML_MLCon_2023.jpg" style="height: 530px;" class="fragment">
+
+<small>Umfrage aus MLConf Berlin 2023</small>
+	</textarea>
+</section>
+
+<section data-markdown>
+	<textarea data-template>
+### Tatsächliche Herausforderungen \#2
+
+<img src="img/ML-keine-Details-Dialog.jpg" style="height: 530px;" class="fragment">
+
+<small>Aus einem Gespräch mit Mikio Braun</small>
+	</textarea>
+</section>
+
 <section data-markdown>
 	<textarea data-template>
 		### Wer ist Olli
@@ -145,7 +182,7 @@ Blue Collar ML Architect
 
 <section data-markdown>
   <textarea data-template>
-  ### Material zusammen erarbeitet mit
+  ### Demo zusammen erarbeitet mit
   
   <div class="container">
   <div class="col">
@@ -235,73 +272,27 @@ https://github.com/djcordhose/mlops/blob/main/docs/glossar.md
 
 <section data-markdown>
 	<textarea data-template>
+### Unser Fallbeispiel: Vorhersage von Risiken
 
-## Unser Fallbeispiel und Datenbasis
+<img src="img/zine/use-case.png" style="height: 530px;" class="fragment">
 
-</textarea>
+<small>Zielsetzung: Wie viele Unfälle werden die potenziellen Kunden haben?</small>
+	</textarea>
 </section>
 
-<section data-markdown>
-	<textarea data-template>
-### Unser Beispiel: Vorhersage von Risiken
-
-* Wir sind CTO einer hochinnovativen Kfz-Versicherungsgesellschaft
-* Anders als andere Versicherungsgesellschaften bestimmen wir den Tarif anhand der geschätzen Anzahl von Unfällen pro Kunde
-* Zielsetzung: Wie viele Unfälle werden die potenziellen Kunden haben?
-
-<img src='img/pixabay/accident-151668_1280.png' style="height: 230px">
-</textarea>
-</section>
-
-<section data-markdown>
-  <textarea data-template>
-### Features
-
-<img src="img/features.jpg">
-  </textarea>
-</section>  
-
-<!-- <section data-markdown>
-### Features
-* Fahrer
-  * *training*: 0/1, hat der Fahrer ein Fahrertraining absolviert
-  *	*age*: Alter des Fahrers in Jahren
-* Fahrzeug  
-  *	*emergency_braking*: 0/1, hat das Fahrzeug ein Notbremssystem 
-  *	*braking_distance*: Bremsweg aus Tempo 100
-  * *power*: Leistung in KW
-*	*miles*: Jährliche Fahrleistung in Meilen
-* Das wollen wir vorhersagen
-  *	*risk*: Unfallrisiko, nach unten und nach oben offen, kann negativ sein
-  *	*group* / *group_name*:	Einteilung in Gruppe anhand des Risikos
-</section> -->
-
-<!-- <section data-markdown>
-	<textarea data-template>
-## Daten entstehen über die Zeit
-
-Die Ground Truth (GT) kommt verzögert und kann sich über die Zeit noch verändern
-
-<img src="img/ground-truth-zeitstrahl.png">    
-
-</textarea>
-</section> -->
 
 <section data-markdown style="font-size: xx-large;" class="hands-on">
   <textarea data-template>
 ## Unser Ausgangspunkt
 
-Notebooks sind das Werkzeug von Phase I: https://colab.research.google.com/github/djcordhose/mlops/blob/main/insurance-prediction/notebooks/train.ipynb
+Notebooks sind das klassische Werkzeug der ML Entwicklung: https://colab.research.google.com/github/djcordhose/mlops/blob/main/insurance-prediction/notebooks/train.ipynb
 
 * Neuronales Netzwerk mit TensorFlow
 * 3 Hidden Layers, 100 Neuronen pro Layer
 * 1500 Datensätze insgesamt
-* Training auf allen 6 Features
-* Test/Validation auf 300 Datensätzen
-* Training auf 1200 Datensätzen
-* Normalisierung auf Trainingsdatensätzen
+  * Training auf 1200 Datensätzen
+  * Test/Validation auf 300 Datensätzen
 * Accuracy Training/Test > 85%
-
 
 </textarea>
 </section>  
@@ -370,7 +361,7 @@ einer praktsichen Anwendung aus
 - _MLOps 1.0 - Forschung, Experiment_
   - Experimente verwalten und Versionieren
     - Model Architecture
-    - Training COde
+    - Training Code
     - Data
     - Artefacts
       - Trained Model 
@@ -889,6 +880,29 @@ https://www.datarevenue.com/de-blog/kubeflow-noch-nicht-bereit-fur-produktion
 </textarea>
 </section>
  -->
+
+ <section data-markdown>
+	<textarea data-template>
+### Wir bauen unser eigenes MLOps Zine
+
+<div class="container">
+  <div class="col">
+  <img src="img/zine/teaser.jpg" style="height: 100%;">
+  <em>Wir falten ein A4 Blatt</em>
+  </div>
+  <div class="col">
+  <img src="img/zine/fold.jpg" style="height: 100%;">
+  <em>Am Schnitt auseinander ziehen</em>
+  
+  </div>
+</div>
+<br>  
+<br>  
+
+<small>Ziel ist nicht höchste Produktionsqualität, sondern etwas anfassbares zum Mitnachhausenehmen</small>
+</textarea>
+</section>
+
 <section data-markdown>
 	<textarea data-template>
 ## Agenda
@@ -901,30 +915,29 @@ https://www.datarevenue.com/de-blog/kubeflow-noch-nicht-bereit-fur-produktion
 	</textarea>
 </section>
 
-
 <section data-markdown>
-  <textarea data-template>
-### Machine Learning Anwendungen brauchen Wartung
+	<textarea data-template>
+### Die Qualität von ML Systemen nimmt meist mit der Zeit ab
 
-<img src='img/verfall-1.PNG'>
+<img src="img/zine/degrade.png" style="height: 530px;" class="fragment">
 
-Das gilt nicht nur für ML Anwendungen, aber bei diesen ist es offensichtlicher
-</textarea>
+<small>Das gilt nicht nur für ML Anwendungen, aber bei diesen ist es offensichtlicher</small>
+	</textarea>
 </section>
 
 <section data-markdown>
-  <textarea data-template>
-### Machine Learning Anwendungen brauchen Wartung
+	<textarea data-template>
+### Aktualisierte Modelle sind immer wieder notwendig
 
-<img src='img/verfall-2.PNG'>
+<img src="img/zine/intervention.png" style="height: 530px;" class="fragment">
 
-Das gilt nicht nur für ML Anwendungen, aber bei diesen ist es offensichtlicher
-</textarea>
+<small>Machine Learning Anwendungen brauchen Wartung</small>
+	</textarea>
 </section>
 
 <section data-markdown class="hands-on">
 	<textarea data-template>
-## Diskussion im Plenum
+## Diskussion
 ### Wann soll man ein neues Modell in Produktion nehmen?
 
 * spricht etwas gegen tägliche Releases?
@@ -965,7 +978,10 @@ Das gilt nicht nur für ML Anwendungen, aber bei diesen ist es offensichtlicher
 
 <section data-markdown>
   <textarea data-template>
-## Ohne Ground Truth braucht man eine Ersatzmetrik
+### Ohne Ground Truth braucht man eine Ersatzmetrik
+
+<img src="img/zine/drift.png" style="height: 450px;" class="fragment">
+
 
 *Wenn sich die Verteilung der Daten der Anfragen oder Vorhersagen deutlich von denen des Trainings unterscheiden* 
 </textarea>
@@ -987,7 +1003,7 @@ Das gilt nicht nur für ML Anwendungen, aber bei diesen ist es offensichtlicher
 
 <section data-markdown class="fragments">
   <textarea data-template>
-### Verteilungen
+### Ein Beispiel mit echten Daten
 
 <img src="img/causal-insurance/age-reference.png">
 
