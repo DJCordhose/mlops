@@ -1408,15 +1408,50 @@ Wenn die Welt sich ändert, ist Drift zu erwarten und damit ok
 </textarea>
 </section> -->
 
-<!-- <section data-markdown class="fragments">
+<section data-markdown>
 	<textarea data-template>
-### Rückkehr in Phase II: Wie trainiert man neu/nach/weiter?
+### Wie trainiert man neu/nach/weiter?
 
 <img src="img/mlops/stateful-vs-stateless-v2.png">
 
 </textarea>
 </section>
- -->
+
+<section data-markdown class="fragments">
+	<textarea data-template>
+### Stateful vs Stateless
+
+* Stateless (aka offline)
+  * trainiert das Modell periodisch komplett neu
+  * verhindert "catastrophic forgetting" (https://en.wikipedia.org/wiki/Catastrophic_interference)
+* Stateful (aka online)
+  * trainiert permanent weiter mit kleinen Batches
+  * eine Art des Transfer Learnings
+  * folgt Drifts schnell
+  * erfordert zeitnah neue Datenpaare 
+  * Online Learning for Recommendations at Grubhub: https://arxiv.org/abs/2107.07106
+    * angeblich 45x mal weniger aufwändig als offline
+    * 20% bessere Metric als offline
+
+</textarea>
+</section>
+
+<section data-markdown>
+	<textarea data-template>
+## Beispiel für Stateless / Offline Training    
+
+1. Wir trainieren weiterhin mit einem einzelnen Monat
+1. Wir könnten auch ältere Daten nehmen, aber durch den Drift scheint der neueste Datensatz am erfolgversprechendsten
+1. `./train.py -d ../data/month-12.csv -m classifier`
+1. Das Training erfüllt unsere Anforderungen nicht mehr
+1. Entweder
+   1. Anforderungen anpassen oder
+   1. Zurück an den Zeichentisch (Phase I)
+      1. Model tunen
+      1. Andere Features nehmen?
+</textarea>
+</section>
+
 
 <section data-markdown>
 	<textarea data-template>
